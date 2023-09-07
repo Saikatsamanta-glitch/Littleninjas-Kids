@@ -13,8 +13,14 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily:{
+        'canvasans': ['Open Sans', 'sans-serif'],
+      },
+      backgroundColor:{
+        'main_bg':"#FBEDC9"
+      }
     },
   },
-  plugins: [],
+  plugins: [ require("flowbite/plugin")],
 }
 export default config
