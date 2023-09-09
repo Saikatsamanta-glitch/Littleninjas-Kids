@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
  
+ @import url('bootstrap/dist/css/bootstrap.min.css');
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -80,3 +81,13 @@
         text-align: start;
         color: var(--bs-nav-link-color) !important;
 }
+ .accordion-button:focus{
+  border: none !important;
+  box-shadow: none !important;
+  background-color: white !important;
+ }
+ .accordion-button:not(.collapsed){
+  border: none !important;
+  box-shadow: none !important;
+  background-color: white !important;
+ }
