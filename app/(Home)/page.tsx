@@ -5,6 +5,7 @@ import HeroSection from '@/Components/herosec';
 import CountUp, { useCountUp } from 'react-countup';
 import StudentSection from '@/Components/StudentSection';
 import FAQ from '@/Components/FAQ';
+import Footer from '@/Components/Footer';
 export default function Home() {
   useCountUp({
     ref: 'counter',
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSection/>
         <StudentSection/>
         <FAQ/>
+        <Footer/>
     </div>
   )
 }
