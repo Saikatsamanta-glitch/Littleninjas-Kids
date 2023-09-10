@@ -27,7 +27,7 @@ const HeroSection = () => {
 
                                         <Button size="lg" className='bg-white hover:bg-[#FFE47E] h-14 hover:text-black text-2xl font-bold outline-2  flex  text-[rgb(84,84,84)]'> 
                                         
-                                        <h2  > <span className='hidden md:inline'>{ `${"</>"}` }</span>  Coding</h2></Button>
+                                        <h2  > <span className='hidden lg:inline'>{ `${"</>"}` }</span>  Coding</h2></Button>
                                 </div>
 
                         </div>
