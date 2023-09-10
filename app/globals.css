@@ -73,6 +73,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 }
 .nav_container a, .nav_container div{
@@ -90,4 +91,10 @@
   border: none !important;
   box-shadow: none !important;
   background-color: white !important;
+ }
+
+ .center_all{
+        display: flex;
+        justify-content:center;
+        align-items:center;
  }

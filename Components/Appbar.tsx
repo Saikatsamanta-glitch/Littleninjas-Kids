@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Link from 'next/link';
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-[#FBEDC9]">
+    <Navbar expand="lg" className="bg-[#FBEDC9] ">
       <Container fluid>
         <Link href="/" className='flex items-center no-underline'>
                 <img src="/brand.png" alt="brand" className='h-[80px] ' />
@@ -40,7 +40,7 @@ function NavScrollExample() {
             <Link href="/blog"> Blog </Link>
           </Nav>
           <div className='flex items-center gap-3 me-5'>
-          <Button size="lg" variant="outline" className='text-2xl font-normal  hover:bg-[#FFDF8C] '>Login</Button>
+          <Button size="lg" variant="outline" className='text-2xl font-normal h-11 hover:bg-[#FFDF8C] '>Login</Button>
           <Button  size="lg" className='bg-[#FFDF8C] text-2xl font-normal border-2 border-black/75  outline-2 text-[#545454] flex gap-3 hover:text-white'> <img src="/discord.png" className='h-[85%]' alt="" /> Discord</Button>
           </div>
         </Navbar.Collapse>
