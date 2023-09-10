@@ -4,7 +4,7 @@
 import './style/studentsection.css';
 
 import CountUp, { useCountUp } from 'react-countup';
-import { Key } from 'lucide-react';
+
 const StudentSection = () => {
   
   const studentObj = [
