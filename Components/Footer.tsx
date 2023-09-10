@@ -2,22 +2,28 @@ import React from 'react'
 import { Button } from './ui/button'
 const Footer = () => {
     const FooterArr=[
-        {
-            "Our Courses For Kids":["Grade 1-2","Grade 3-5","Grade 6-8","Grade 9+"],
+
+        {  
+             title:"Our Courses For Kids",
+
+           content:["Grade 1-2","Grade 3-5","Grade 6-8","Grade 9+"],
             
            
           
 
         },{
-            "Quick Links":["About Us","Trainers","View Courses","Student Projects"],
+            title:"Quick Links",
+           content:["About Us","Trainers","View Courses","Student Projects"],
         },{
-            "Get In Touch":[{
+            title:"Get In Touch",
+           content:[{
                 id:1,
                 support:"support@littleninjas.com",
                 icon:'/emailicon.svg'
             }],
         },{
-            "Registered Office Address":["India","The Pearl, 1537, 5th Main Rd, Rajiv Gandhi Nagar, Sector 7, HSR Layout, Bengaluru, Karnataka 560102"]
+            title:"Registered Office Address",
+            content:["India","The Pearl, 1537, 5th Main Rd, Rajiv Gandhi Nagar, Sector 7, HSR Layout, Bengaluru, Karnataka 560102"]
         }
         
     ]
@@ -30,13 +36,13 @@ const Footer = () => {
       <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         {
             FooterArr.map((obj)=>{
-                let keyval=Object.keys(obj)[0]
+               
                 return(
-                <div className='text-center 'key={keyval}>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{keyval}</h2>
+                <div className='text-center 'key={obj.title}>
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{obj.title}</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium  w-full px-0">
-                    {  keyval!="Get In Touch"?
-                        obj[keyval].map((val:any)=>(
+                    {  obj.title!="Get In Touch"?
+                        obj.content.map((val:any)=>(
                             
                             
                                 <li className="mb-4" key={val}>
@@ -44,7 +50,7 @@ const Footer = () => {
                             </li>
                             
                         
-                        )):obj[keyval].map((val:any)=>(
+                        )): obj.content.map((val:any)=>(
                             
                             
                             <li className=" space-x-1 mb-4 flex  md:gap-3" key={val.id}>
