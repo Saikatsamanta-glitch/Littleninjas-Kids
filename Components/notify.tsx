@@ -7,7 +7,7 @@ export default function Notify() {
         return (<>
                 {
 
-                        show ? <div className="sticky top-0 h-16 w-screen bg-[#FF847E] items-center flex justify-between md:px-10  overflow-hidden transition-all duration-300 "> 
+                        show ? <div className="sticky top-0 h-16 w-screen bg-[#FF847E] items-center flex justify-between md:px-10 z-40  overflow-hidden transition-all duration-300 "> 
                         <img src="/design.png" alt="" className="md:h-[130%] h-[0%] " />
                         <div className="flex h-full items-center">
                                  < img src="/star.png" alt="" className="h-[90%]" />
