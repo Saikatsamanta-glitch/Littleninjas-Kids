@@ -1,39 +1,61 @@
+ 'use client';
+ import React from 'react';
+ import { useEffect } from 'react';
 import './style/studentsection.css';
-import CountUp from 'react-countup/build/CountUp';
+
+import CountUp, { useCountUp } from 'react-countup';
+
 const StudentSection = () => {
+  
   const studentObj = [
-    {
+    {  
       title: "Students taught",
       count: 15000,
     },
-    {
+    { 
       title: "classes taken",
       count: 50000,
     },
     {
-      title: "classes taken",
+      title: "registered mentors",
       count: 500,
     },
     {
-      title: "classes taken",
+      title: "projects created",
       count: 7500,
     },
-    {
-      title: "classes taken",
-      count: 15,
+    { 
+      title: "country presence",
+      count: 15
     },
   ];
+  const RunCountUp=()=>{
+    for(let i=0;i<studentObj.length;i++){
+      useCountUp({
+        ref: studentObj[i].title,
+        end: studentObj[i].count,
+        enableScrollSpy: true,
+        scrollSpyDelay: 1000,
+      });
+    }
+    
+  }
+  
+    RunCountUp()
+   
+   
+ 
   return (
     <div className=" h-auto flex items-center justify-evenly bg-[rgb(255,246,222)] md:py-6 mt-16 flex-wrap ">
       {studentObj.map((val, i) => {
         return (
-                <>
+                <div key={val.title} className='flex items-center justify-evenly gap-5'>
 
-          <div key={val.title} className=" center_all  h-[80px] w-auto  font-[500]  flex-col">
-            <div className="text-[rgb(105,105,105)] md:text-3xl text-xl" >
-                {val.count} <span>+</span>
+          <div className=" center_all  h-[80px] w-auto  font-[500]  flex-col" >
+            <div className="text-[rgb(105,105,105)] md:text-3xl text-xl flex" >
+               <p id={val.title}> {val.count} </p>  <span>+</span>
             </div>
-            <div className="text-[rgb(255,132,126)] md:text-2xl text-lg"> {val.title} </div>
+            <div className="text-[rgb(255,132,126)] md:text-2xl text-lg" > {val.title} </div>
           </div>
           
                 {
@@ -42,7 +64,7 @@ const StudentSection = () => {
           
                 
           
-          </>
+          </div>
         );
       })}
     </div>
