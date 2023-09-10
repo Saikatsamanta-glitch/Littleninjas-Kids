@@ -83,14 +83,16 @@
         color: var(--bs-nav-link-color) !important;
 }
  .accordion-button:focus{
-  border: none !important;
+  border: 1px solid #ffb600 !important;
   box-shadow: none !important;
-  background-color: white !important;
+
+
  }
  .accordion-button:not(.collapsed){
-  border: none !important;
+  border: 1px solid #ffb600 !important;
   box-shadow: none !important;
-  background-color: white !important;
+ 
+  
  }
 
  .center_all{
