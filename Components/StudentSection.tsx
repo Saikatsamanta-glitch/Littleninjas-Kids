@@ -27,9 +27,9 @@ const StudentSection = () => {
     <div className=" h-auto flex items-center justify-evenly bg-[rgb(255,246,222)] md:py-6 mt-16 flex-wrap ">
       {studentObj.map((val, i) => {
         return (
-                <>
+                <div key={val.title}>
 
-          <div key={val.title} className=" center_all  h-[80px] w-auto  font-[500]  flex-col">
+          <div  className=" center_all  h-[80px] w-auto  font-[500]  flex-col">
             <div className="text-[rgb(105,105,105)] md:text-3xl text-xl" >
                 {val.count} <span>+</span>
             </div>
@@ -42,7 +42,7 @@ const StudentSection = () => {
           
                 
           
-          </>
+          </div>
         );
       })}
     </div>
