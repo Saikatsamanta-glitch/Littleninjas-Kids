@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
- @import url('bootstrap/dist/css/bootstrap.min.css');
+
+@import url('bootstrap/dist/css/bootstrap.min.css');
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -73,6 +73,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 }
 .nav_container a, .nav_container div{
@@ -82,12 +83,47 @@
         color: var(--bs-nav-link-color) !important;
 }
  .accordion-button:focus{
-  border: none !important;
+  border: 1px solid #ffb600 !important;
   box-shadow: none !important;
-  background-color: white !important;
+
+
  }
  .accordion-button:not(.collapsed){
-  border: none !important;
+  border: 1px solid #ffb600 !important;
   box-shadow: none !important;
-  background-color: white !important;
+ 
+  
  }
+
+ .center_all{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+ }
+ .center_absolute{
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+ }
+
+ /* width */
+::-webkit-scrollbar {
+        width: 10px;
+    }
+      
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+      
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #FF847E;
+        border-radius: 5px;
+    }
+      
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
