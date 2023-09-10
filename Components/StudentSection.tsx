@@ -31,7 +31,7 @@ const StudentSection = () => {
 
           <div key={val.title} className=" center_all  h-[80px] w-auto  font-[500]  flex-col">
             <div className="text-[rgb(105,105,105)] md:text-3xl text-xl" >
-                {val.count}
+                {val.count} <span>+</span>
             </div>
             <div className="text-[rgb(255,132,126)] md:text-2xl text-lg"> {val.title} </div>
           </div>
