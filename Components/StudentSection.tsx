@@ -46,7 +46,7 @@ const StudentSection = () => {
    
  
   return (
-    <div className=" h-auto flex items-center justify-evenly bg-[rgb(255,246,222)] md:py-6 mt-16 flex-wrap ">
+    <div className="md:mx-8 h-auto flex items-center justify-evenly bg-[rgb(255,246,222)] md:py-6 mt-16 flex-wrap ">
       {studentObj.map((val, i) => {
         return (
                 <div key={val.title} className='flex items-center justify-evenly gap-5'>
