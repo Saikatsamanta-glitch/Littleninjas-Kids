@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Appbar from '@/Components/Appbar'
 import NavScrollExample from '@/Components/Appbar'
+import Footer from '@/Components/Footer'
 
 
 export const metadata: Metadata = {
@@ -17,10 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >
+      <body className='md:px-5'>
         <Notify/>
         <NavScrollExample/>
         {children}
+        <Footer/>
         </body>
     </html>
   )
