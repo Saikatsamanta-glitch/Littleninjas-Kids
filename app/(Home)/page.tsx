@@ -1,5 +1,4 @@
 'use client';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeroSection from '@/Components/herosec';
 import StudentSection from '@/Components/StudentSection';
@@ -10,11 +9,12 @@ import CodingClassProcess from '@/Components/CodingClassProcess';
 
 export default function Home() {
 
-  return (
-    <div className='w-full mx-auto relative overflow-x-hidden h-full'>
-    
-        <HeroSection/>
-        <StudentSection/>
+        return (
+                <div className='w-full mx-auto relative overflow-x-hidden h-full'>
+
+                        <HeroSection />
+                        <StudentSection />
+                       
 
         <Courses/>
         <CodingClassProcess/>
