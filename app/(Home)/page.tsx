@@ -5,6 +5,8 @@ import StudentSection from '@/Components/StudentSection';
 import FAQ from '@/Components/FAQ';
 import Footer from '@/Components/Footer';
 import Courses from '@/Components/Courses';
+import CodingClassProcess from '@/Components/CodingClassProcess';
+
 export default function Home() {
 
         return (
@@ -12,10 +14,12 @@ export default function Home() {
 
                         <HeroSection />
                         <StudentSection />
-                        <Courses />
+                       
 
-                        <FAQ />
-                        <Footer />
-                </div>
-        )
+        <Courses/>
+        <CodingClassProcess/>
+        <FAQ/>
+       
+    </div>
+  )
 }
