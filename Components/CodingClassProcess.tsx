@@ -1,59 +1,52 @@
 import React from 'react'
-import CodingClassCard from './CodingClassCard'
+
+const process_data = [
+        {
+                title: "Group classes or 1:1 — Choose what's the best for you",
+                img: "https://www.codeyoung.com/_ipx/w_1280/online-meeting.svg"
+        },
+        {
+                title: "Choose your personal Guru from 500+ available mentors",
+                img: "https://www.codeyoung.com/_ipx/w_1280/teacher.svg"
+        },
+        {
+                title: "Classes are live and take place virtually; attend from anywhere",
+                img: "https://www.codeyoung.com/_ipx/w_1280/online-class.svg"
+        },
+        {
+                title: "Classes happen 2-3 times per week, class duration is 60 min",
+                img: "https://www.codeyoung.com/_ipx/w_1280/schedule.svg"
+        },
+        {
+                title: "Classes are hosted on our proprietary SandboxTM platform",
+                img: "https://www.codeyoung.com/_ipx/w_1280/Sandbox.svg"
+        },
+        {
+                title: "Take part in our hosted events to skill up and earn rewards",
+                img: "https://www.codeyoung.com/_ipx/w_1280/competition.svg"
+        }
+]
 
 const CodingClassProcess = () => {
-    const obj={
-        "mentor":500,
-        'weekschedule':'2-3',
-        'duration':60
-    }
-  return (
-    <div className='w-full h-full mx-auto  text-center mt-16'>
-      <p className='md:text-4xl text-2xl font-semibold md:px-0 px-2'>How Coding Classes For Kids Work At LittleNinjas</p>
-      <div className='w-full h-full  flex flex-wrap justify-center gap-5 mt-20 md:px-0 px-2'>
-      <div>
-      <img src='/classimg1.svg' className='w-[100px] h-[100px] m-auto'/>
-      <div className='text-center text-[#000] opacity-[0.6] md:text-[21px] text-base mt-[35px]'>
-      Group classes or 1:1 — Choose what's the best for you
-      </div>
-    </div>
-    <div>
-      <img src='/classimg1.svg' className='w-[100px] h-[100px] m-auto'/>
-      <div className='text-center text-[#000] opacity-[0.6] md:text-[21px] text-base mt-[35px]'>
-      {
-        `Choose your personal Guru from ${obj.mentor}+ available mentors`
-      }
-      </div>
-    </div>
-    <div>
-      <img src='/classimg1.svg' className='w-[100px] h-[100px] m-auto'/>
-      <div className='text-center text-[#000] opacity-[0.6] md:text-[21px] text-base mt-[35px]'>
-      Classes are live and take place virtually; attend from anywhere
-      </div>
-    </div>
-    <div>
-      <img src='/classimg1.svg' className='w-[100px] h-[100px] m-auto'/>
-      <div className='text-center text-[#000] opacity-[0.6] md:text-[21px] text-base mt-[35px]'>
-      {
-        `Classes happen ${obj.weekschedule} times per week, class duration is ${obj.duration} min`
-      }
-      </div>
-    </div>
-    <div>
-      <img src='/classimg1.svg' className='w-[100px] h-[100px] m-auto'/>
-      <div className='text-center text-[#000] opacity-[0.6] md:text-[21px] text-base mt-[35px]'>
-      Classes are hosted on our proprietary SandboxTM platform
-      </div>
-    </div>
-    <div>
-      <img src='/classimg1.svg' className='w-[100px] h-[100px] m-auto'/>
-      <div className='text-center text-[#000] opacity-[0.6] md:text-[21px] text-base mt-[35px]'>
-      Take part in our hosted events to skill up and earn rewards
-      </div>
-    </div>
-      </div>
-    </div>
-  )
+        return (
+                <div className='h-auto mt-28'>
+                        <h2 className='text-center mt-14 md:text-5xl text-black/80 text-2xl md:px-16 px-4'>How Coding Classes For Kids Work At LittleNinjas 🙌</h2>
+                        <div className="h-auto w-full flex flex-wrap justify-center md:px-28  mt-10" >
+                                {
+                                        process_data.map((val) => {
+                                                return (
+                                                        <div key={val.title} className='md:w-80 w-48 flex justify-center flex-col md:m-5  md:scale-100 scale-75'>
+                                                                <img src={val.img} className='h-20' alt="" />
+                                                                <h3 className='mt-9 text-center text-secondary text-lg'> {val.title} </h3>
+                                                        </div>
+                                                )
+                                        })
+                                }
+
+
+                        </div>
+                </div>
+        )
 }
 
 export default CodingClassProcess
