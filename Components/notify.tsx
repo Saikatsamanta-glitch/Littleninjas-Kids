@@ -7,7 +7,7 @@ export default function Notify() {
         return (<>
                 {
 
-                        show ? <div className="sticky top-0 h-16 w-screen bg-[#FF847E] items-center flex justify-between md:px-10 z-40  overflow-hidden transition-all duration-300 "> 
+                        show && <div className="sticky top-0 h-16 w-screen bg-[#FF847E] items-center flex justify-between md:px-10 z-40  overflow-hidden transition-all duration-300 "> 
                         <img src="/design.png" alt="" className="md:h-[130%] h-[0%] " />
                         <div className="flex h-full items-center">
                                  < img src="/star.png" alt="" className="h-[90%]" />
@@ -18,7 +18,7 @@ export default function Notify() {
                        
 
                                 <h1 onClick={()=>{setShow(!show)}} className=" text-4xl cursor-pointer rounded-full hover:bg-slate-100/20 p-2 hover:text-white transition-all  duration-500 text-gray-600 " >X</h1>
-                        </div > : <></>
+                        </div > 
 
                 }
         </>

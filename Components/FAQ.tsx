@@ -43,7 +43,7 @@ const FAQ = () => {
          <h3 className='text-5xl font-bold leading-[54px] w-full text-center'>
          FAQs
          </h3>
-         <Accordion  className=' w-full flex flex-col gap-5'>
+         <Accordion  className=' w-full flex flex-col gap-3'>
           {
           FaqQueryObj.map((obj,i)=>(
               <Accordion.Item eventKey={`${i}`} key={obj.query}>

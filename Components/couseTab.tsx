@@ -1,10 +1,10 @@
 import { Button } from "./ui/button"
 export default function CourseTab() {
         return (
-                <div className="h-[450px] shadow-lg w-80  p-2 bg-[#FFF6DE] rounded-sm relative ">
-                        <div className="w-44 h-12 center_absolute  bg-[#FF847E] rounded-xl absolute -top-6 center_all text-white font-bold text-xl"> Level 1 </div>
+                <div className="h-[450px] w-80  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">
+                        <div className="w-32 h-9 center_absolute md:flex hidden bg-[#FF847E] rounded-xl absolute -top-6 center_all text-white font-bold text-xl"> Level 1 </div>
 
-                        <div className="flex justify-between items-center w-full h-28 bg-[#ABF3FF]  mt-4 rounded-lg p-2">
+                        <div className="flex justify-between items-center w-full h-28 bg-[#ABF3FF]  md:mt-4 mt-2 rounded-lg p-2">
 
                                 <img src="/level4.png" alt="" className="w-[30%] scale-[1.6]" />
 
@@ -14,7 +14,7 @@ export default function CourseTab() {
                                 </div>
                         </div>
                         <h1 className="text-xl font-bold text-center">Learn Front-End Development Of Websites</h1>
-                        <div className="h-10 rounded-lg bg-[#FFE7A9] flex justify-evenly items-center text-xl">
+                        <div className="h-10 rounded-lg bg-[#FFE7A9] flex justify-evenly items-center text-xl mx-2">
                                 <span>48 classes</span>
                                 <span><i className="fi fi-sr-tally-1 text-2xl  text-slate-600"></i></span>
                                 <span>30$ per class</span>
