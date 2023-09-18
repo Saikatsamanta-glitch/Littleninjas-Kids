@@ -2,7 +2,7 @@
 import { createContext, useEffect,useState } from "react";
 export const Course_context = createContext([]);
 import axios from "axios";
-export const Course_Context = ({
+export const Course_Context = ({ 
         children,
 }: {
         children: React.ReactNode;
@@ -10,8 +10,8 @@ export const Course_Context = ({
         const [data,setData] =useState([]);
         useEffect(() => {
                 (async function () {
-                        const res = await axios('api/course')
-                        // console.log(res);
+                        const res = await axios('http://localhost:5000/courses');
+                        // console.log(res.data);
                         setData(res.data);
                 })()
         }, [])
