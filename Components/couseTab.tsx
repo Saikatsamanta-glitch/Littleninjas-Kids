@@ -1,7 +1,9 @@
+
 import { Button } from "./ui/button"
 export default function CourseTab({data={}}) {
         console.log(data);
         return (
+                
                 <div className="h-[450px] w-80  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">
                         <div className="w-32 h-9 center_absolute md:flex hidden bg-[#FF847E] rounded-xl absolute -top-6 center_all text-white font-bold text-xl"> Level 1 </div>
 
@@ -10,7 +12,7 @@ export default function CourseTab({data={}}) {
                                 <img src="/level4.png" alt="" className="w-[30%] scale-[1.6]" />
 
                                 <div className="h-full w-auto flex flex-col justify-evenly text-center ">
-                                        <h1 className="text-center text-xl font-bold">Become <br /> {data.title[1]} </h1>
+                                        <h1 className="text-center text-xl font-bold">Become <br /> {data[" title"]} </h1>
                                         <p>{data.ages}</p>
                                 </div>
                         </div>
@@ -29,7 +31,8 @@ export default function CourseTab({data={}}) {
                                 <li>Launching A Website</li>
                         </ul>
                         <div className="flex justify-evenly">
-                                <Button size="sm" variant="outline" className='text-xl font-normal hover:bg-[#FFDF8C] '>View curriculum</Button>
+                                
+                               <a href={data.pdf_link}> <Button size="sm" variant="outline" className='text-xl font-normal hover:bg-[#FFDF8C] '  >  View curriculum</Button></a>
                                 <Button size="sm" className='bg-[#FFDF8C] text-xl font-normal border-2  text-[#545454] hover:text-white hover:bg-[#FF847E]'>  Book now</Button>
                         </div>
                         <img src="/level1blade.png" alt="" className="h-20 absolute -top-6 right-0" />
