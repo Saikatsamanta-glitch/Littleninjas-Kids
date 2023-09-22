@@ -10,7 +10,7 @@ export default function Courses() {
         useEffect(() => {
          (async()=>{
                const res= await axios(`http://localhost:5000/courses/${level}`);
-               console.log(res.data);
+        //        console.log(res.data);
                setLevel_Data(res.data)
          })()
         }, [level])
@@ -38,7 +38,7 @@ export default function Courses() {
                 <div className="md:w-3/4 w-screen h-[500px] gap-x-0 md:space-x-5 flex items-center overflow-x-auto ">
                      {
                         level_data.map(v=>{
-                                return <  CourseTab key={v?.character_logo} data={v} />
+                                return v.level_id &&  <  CourseTab key={v?.character_logo} data={v} />
                         })
                      } 
                 

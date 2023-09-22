@@ -20,7 +20,7 @@ const ProcesstoEnroll = () => {
     ]
   return (
     <div className='w-full h-auto flex justify-center items-center md:p-[100px] flex-col md:gap-y-32 mt-32 bg-[#fffbf2] p-10 gap-y-10'>
-      <h3 className='lg:text-5xl md:text-3xl text-[16px]'>A Simple 3-Step Process To Enroll Your Kid To Any Coding Course</h3>
+      <h3 className='lg:text-4xl md:text-2xl text-[16px]'>A Simple 3-Step Process To Enroll Your Kid To Any Coding Course</h3>
       <div className='w-full h-full flex md:justify-between items-center md:flex-row flex-col gap-y-10'>
           {
             enrollarr.map((obj,i)=>(

@@ -2,13 +2,13 @@ import React from "react";
 import Link from "next/link";
 const SandBox = () => {
   return (
-    <div className="w-full h-auto md:p-20 flex justify-between mt-[100px] md:flex-row flex-col">
-      <div className="w-full">
+    <div className="w-full h-auto md:p-10 flex justify-between items-center mt-[50px] md:flex-row flex-col">
+      <div className="w-full h-full">
         <div className="float-right">
           <img src="/pattern_2.png" className="max-w-full h-auto" />
         </div>
-        <center className="h-full">
-        <iframe src="http://localhost:3000/" className="max-w-full w-[90%] h-full "/>
+        <center>
+                <iframe src="http://localhost:3000/" className="w-[95%] h-80" ></iframe>
         </center>
         <div className="float-left">
           <img src="/pattern_1.png" className="max-w-full h-auto" />
@@ -20,14 +20,11 @@ const SandBox = () => {
         </div>
         <div>
           <center>
-            <img
-              src="/sandbox_logo_vector.svg"
-              className=" max-w-full"
-            />
+           <h1 className="text-5xl">Genius</h1>  Your uniqueness is what makes you shine
           </center>
         </div>
         <div className="text-center mt-[20px] mb-[10px]">
-          Sandbox is an interactive learning platform by Codeyoung for coding
+        Genius is an interactive learning platform by LittleNinjas for coding
           and maths where students and teachers can collaborate and learn in a
           meaningful way.
         </div>
