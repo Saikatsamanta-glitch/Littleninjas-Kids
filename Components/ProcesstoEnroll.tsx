@@ -5,12 +5,12 @@ const ProcesstoEnroll = () => {
         {
             title:'Select A Course',
             desc:"Choose a course of your choice based on the child's age/grade",
-            img:'/abcd.svg'
+            img:'/courses.svg'
         },
         {
             title:'Book a FREE trial class',
             desc:'Choose your mentor of choice from 200+ mentors as well as your preferred time slot',
-            img:'/subscribe.svg'
+            img:'/successful-booking.svg'
         },
         {
             title:'Enroll for the course',

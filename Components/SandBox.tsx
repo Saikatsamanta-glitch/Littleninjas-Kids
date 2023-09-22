@@ -7,8 +7,8 @@ const SandBox = () => {
         <div className="float-right">
           <img src="/pattern_2.png" className="max-w-full h-auto" />
         </div>
-        <center>
-          <img src="/sandbox.png" className="w-[90%] max-w-full" />
+        <center className="h-full">
+        <iframe src="http://localhost:3000/" className="max-w-full w-[90%] h-full "/>
         </center>
         <div className="float-left">
           <img src="/pattern_1.png" className="max-w-full h-auto" />
