@@ -2,7 +2,7 @@
 import { Button } from "./ui/button"
 export default function CourseTab({ data = {} }) {
         const color = data.color.toString()
-        console.log("color",data.ages);
+       
         return (
 
                 <div className="h-[450px] w-80 hover:scale-105 transition-all duration-200  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">

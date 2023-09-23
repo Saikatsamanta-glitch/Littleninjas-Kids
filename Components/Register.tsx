@@ -17,7 +17,7 @@ function RegisterCanva({ show, setShow }: any) {
                         {
                                 size: "normal",
                                 callback: (response: any) => {
-                                        console.log(response);
+                                        // console.log(response);
                                         setTimeout(() => {
                                                 setShowChecker(false)
                                         }, 500);

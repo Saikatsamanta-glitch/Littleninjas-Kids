@@ -1,9 +1,10 @@
 "use client"
 
-import Offcanvas from 'react-bootstrap/Offcanvas';
+
 import { useState } from 'react';
 import { Button } from './ui/button';
-import RegisterCanva from './Register';
+
+import OffcanvasDrawer from './OffcanvasDrawer';
 interface btninterface {
         title?: string;
         variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
@@ -29,7 +30,7 @@ const FreeDemoBtn = (props: btninterface) => {
                                 <img src='/btndesign.png' className='w-[68px] h-[58px] absolute top-[-40px] right-[-35px]' />
 
                         </Button>
-                        <RegisterCanva show={show} setShow={setShow} /> 
+                        <OffcanvasDrawer show={show} setShow={setShow} /> 
                 </>
         )
 }
