@@ -9,9 +9,11 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import 'react-phone-input-2/lib/style.css'
 import { useContext } from 'react';
 import { Course_context } from '@/context/course_context';
+import OtpInput from 'react-otp-input';
 const OffcanvasDrawer = ({show,setShow}:any) => {
     const handleClose = () =>{ setShow(false) }
     const [phone,setphone]=useState('')
+    const [otp, setOtp] = useState('');
      const data=useContext(Course_context)
      console.log(data)
   return (
@@ -50,11 +52,6 @@ const OffcanvasDrawer = ({show,setShow}:any) => {
     </Form.Select>
     
       </Form.Group>
-      <div  className="mb-3 flex justify-between  w-full">
-      <Button variant="secondary" className='w-auto'>Grade 1-5</Button>
-      <Button variant="secondary"  className='w-auto'>Grade 6-10</Button>
-      <Button variant="secondary"  className='w-auto'>Grade 10+</Button>
-    </div>
       <Form.Group className="mb-3 flex">
       <PhoneInput
   country={'us'}
@@ -63,10 +60,27 @@ const OffcanvasDrawer = ({show,setShow}:any) => {
   containerStyle={{width:'60%'}}
   onChange={phone => setphone(phone)}
 />
-<Button variant="outline-secondary" id="button-addon2" style={{backgroundColor:'orange',border:'none',color:'white'}}>
-          Button
-        </Button>
+<button variant="outline-secondary" id="button-addon2" className='bg-orange-500 border-none w-20 p-2 ml-4 text-white'>
+          Check
+        </button>
       </Form.Group>
+      <OtpInput
+      value={otp}
+      onChange={setOtp}
+      numInputs={6}
+      renderSeparator={<span>-</span>}
+      renderInput={(props) => <input {...props} />}
+    />
+      <Form.Group className="mb-3">
+      <Form.Select aria-label="Default select example">
+      <option>Select Grade</option>
+        <option value='1'>Grade 1-5</option>
+        <option value='2'>Grade 6-10</option>
+        <option value='3'>Grade 10+</option>
+    </Form.Select>
+    
+      </Form.Group>
+     
       
       <Button variant="primary" type="submit" style={{backgroundColor:'orange',border:'none'}}>
         Submit
