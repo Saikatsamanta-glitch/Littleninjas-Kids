@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 const SandBox = () => {
   return (
-    <div className="w-full h-auto md:p-10 flex justify-between items-center mt-[50px] md:flex-row flex-col">
+    <div className="w-full h-auto md:p-10 flex justify-between items-center mt-[50px] md:flex-row flex-col-reverse">
       <div className="w-full h-full">
         <div className="float-right">
           <img src="/pattern_2.png" className="max-w-full h-auto" />

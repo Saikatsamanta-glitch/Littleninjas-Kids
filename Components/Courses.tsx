@@ -5,19 +5,15 @@ import {useContext, useState,useEffect} from 'react';
 import { Course_context } from "@/context/course_context";
 export default function Courses() {
         const res = useContext(Course_context);
-        const [level_data,setLevel_Data] = useState([]);
-        const [level,setLevel]= useState(1);
+        const [level_data,setLevel_Data] = useState<any[]>([]);
+        const [level,setLevel]= useState<Number>(1);
         useEffect(() => {
          (async()=>{
                const res= await axios(`http://localhost:5000/courses/${level}`);
         //        console.log(res.data);
                setLevel_Data(res.data)
          })()
-        }, [level])
-        
-        
-      
-        
+        }, [level])   
   return (
     <div className="h-auto mt-10 md:px-16">
         <h1 className="text-center mb-10"> Courses 🔥</h1>
@@ -26,16 +22,13 @@ export default function Courses() {
                         {
                                 res?.map((v)=>{
                                         return (
-                                                <div key={v.title} onClick={()=>{setLevel(v.course_id)}} className="md:w-[95%] course_tab md:scale-100 sm:w-auto  md:h-14 md:border-l-8 m-2 md:mb-3 md:border-[#FF847E] overflow-hidden rounded-lg flex items-center justify-between md:text-2xl hover:bg-[#ffeec2] hover:scale-110 cursor-pointer px-2 "> <span className="text-lg">{v.title}</span> <h1 className="text-gray-600 md:block hidden">{">"}</h1> </div>
+                                                <div key={v.title} onClick={()=>{setLevel(v.course_id)}} className="md:w-[95%] course_tab md:scale-100 sm:w-auto  md:h-14 md:border-l-8 m-2 md:mb-3 md:border-[#FF847E] overflow-hidden rounded-lg flex items-center justify-between md:text-2xl hover:bg-[#ffeec2] hover:scale-110 cursor-pointer px-2 transition-all duration-150"> <span className="text-lg">{v.title}</span> <h1 className="text-gray-600 md:block hidden">{">"}</h1> </div>
                                         )
                                 })
                                 
-                        }
-                        
-                        
-                        
+                        }    
                 </div>
-                <div className="md:w-3/4 w-screen h-[500px] gap-x-0 md:space-x-5 flex items-center overflow-x-auto ">
+                <div className="md:w-3/4 w-screen h-[600px] gap-x-0 md:space-x-5 flex items-center overflow-x-auto ">
                      {
                         level_data.map(v=>{
                                 return v.level_id &&  <  CourseTab key={v?.character_logo} data={v} />
