@@ -9,7 +9,7 @@ export default function Courses() {
         const [level,setLevel]= useState<Number>(1);
         useEffect(() => {
          (async()=>{
-               const res= await axios(`http://localhost:5000/courses/${level}`);
+               const res= await axios(`https://littleninjas-backend.onrender.com/courses/${level}`);
         //        console.log(res.data);
                setLevel_Data(res.data)
          })()
