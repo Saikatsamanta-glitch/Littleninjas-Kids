@@ -39,11 +39,11 @@ const FAQ = () => {
   return (
     <div className='w-full h-full mx-auto md:p-10 my-4'>
       <div className='w-full h-full flex justify-center items-center md:p-10  mx-auto '>
-       <div className='w-full md:w-[70%] h-full md:p-10  flex flex-col items-center justify-start gap-y-10 '>
+       <div className='w-full md:w-[90%] h-full md:p-10  flex flex-col items-center justify-start gap-y-10 '>
          <h3 className='text-5xl font-bold leading-[54px] w-full text-center'>
          FAQs
          </h3>
-         <Accordion  className=' w-full flex flex-col gap-3'>
+         <Accordion  className=' w-full flex flex-col gap-10 md:scale-110'>
           {
           FaqQueryObj.map((obj,i)=>(
               <Accordion.Item eventKey={`${i}`} key={obj.query}>

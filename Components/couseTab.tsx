@@ -2,21 +2,21 @@
 import { Button } from "./ui/button"
 export default function CourseTab({ data = {} }) {
         const color = data.color.toString()
-        console.log("color", color);
+       
         return (
 
-                <div className="h-[450px] w-80  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">
-                        <div className="w-32 h-9 center_absolute md:flex hidden bg-[#FF847E] rounded-xl absolute -top-6 center_all text-white font-bold text-xl"> Level 1 </div>
+                <div className="h-[450px] w-80 hover:scale-105 transition-all duration-200  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">
+                        <div className="w-32 h-9 center_absolute md:flex hidden bg-[#FF847E] rounded-xl absolute -top-6 center_all text-white font-bold text-xl"> Level {data.steps} </div>
 
                         <div style={{
                                 backgroundColor: color,
-                        }} className={`flex justify-between items-center w-full h-28 md:mt-4 mt-2 rounded-lg p-2`}>
+                        }} className={`flex justify-evenly items-center w-full h-28 md:mt-4 mt-2 rounded-lg `}>
 
                                 <img src="/level4.png" alt="" className="w-[30%] scale-[1.6]" />
 
-                                <div className="h-full w-auto flex flex-col justify-evenly text-center ">
-                                        <h1 className="text-center text-xl font-bold">Become <br /> {data[" title"]} </h1>
-                                        <p>{data.ages}</p>
+                                <div className="pr-2 h-full w-auto flex flex-col  justify-center text-center ">
+                                        <h1 className="text-center text-xl text-black/75 font-bold">Become <br /> {data[" title"]} </h1>
+                                        <p>{data[" ages"]}</p>
                                 </div>
                         </div>
                         <h1 className="text-xl font-bold text-center">{data.subtitle}</h1>
