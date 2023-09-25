@@ -16,7 +16,7 @@ export default function Courses() {
         }, [level])   
   return (
     <div className="h-auto mt-10 md:px-16">
-        <h1 className="text-center mb-10"> Courses 🔥</h1>
+        <h1 className="text-center text-4xl mb-10"> Courses 🔥</h1>
         <div className="flex md:flex-row flex-col">
                 <div className="md:w-1/4 h-auto w-screen flex flex-wrap md:flex-nowrap md:flex-col items-center justify-center md:mr-5  sm:mb-4 sm:mr-0">
                         {
