@@ -126,6 +126,7 @@
   background: #555;
 }
 
+
     @media only screen and (max-width: 600px) {
         .course_tab{
                 border: 2px black solid;
@@ -148,3 +149,4 @@
         font-size: small;
       }
     }
+

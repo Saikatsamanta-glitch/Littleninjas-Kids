@@ -10,7 +10,7 @@ export const Course_Context = ({
         const [data,setData] =useState([]);
         useEffect(() => {
                 (async function () {
-                        const res = await axios('http://localhost:5000/courses');
+                        const res = await axios('https://littleninjas-backend.onrender.com/courses');
                         // console.log(res.data);
                         setData(res.data);
                 })()
