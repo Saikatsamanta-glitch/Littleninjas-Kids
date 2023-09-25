@@ -52,7 +52,7 @@ const Footer = () => {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium  w-full px-0">
                     {  obj.title!="Get In Touch"?
                          
-                       obj.content.map((val:any)=>(
+                       obj.content.map((val)=>(
                             
                             
                                 <li className="mb-4" key={val}>
@@ -65,7 +65,7 @@ const Footer = () => {
                       
                     
                         
-                        : obj.content.map((val:any)=>(
+                        : obj.content.map((val)=>(
                             
                             
                             <li className=" space-x-1 mb-4 flex  md:gap-3" key={val.id}>

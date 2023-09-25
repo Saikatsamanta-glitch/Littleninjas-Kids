@@ -1,8 +1,7 @@
 'use client';
 import React from 'react'
 import { useState } from 'react';
-import { ToastContainer, toast } from "react-toastify";
-import {ShareSocial} from 'react-share-social' 
+import { toast } from "react-toastify";
 import Link from 'next/link'
 const EventCard = ({obj}:any) => {
     const [showshare,setshowshare]=useState(false)
@@ -53,13 +52,7 @@ const EventCard = ({obj}:any) => {
                      </div>
                      
                     </div>
-                    {
-                      showshare && <ShareSocial 
-                      url ={window.location.href}
-                      socialTypes={['facebook','linkedin','whatsapp','twitter']}
-                 
-                    />
-                    }
+                   
                     
                   </Link>
                 

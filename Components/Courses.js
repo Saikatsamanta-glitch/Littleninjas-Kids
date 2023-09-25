@@ -5,8 +5,8 @@ import {useContext, useState,useEffect} from 'react';
 import { Course_context } from "@/context/course_context";
 export default function Courses() {
         const res = useContext(Course_context);
-        const [level_data,setLevel_Data] = useState<any[]>([]);
-        const [level,setLevel]= useState<Number>(1);
+        const [level_data,setLevel_Data] = useState([]);
+        const [level,setLevel]= useState(1);
         useEffect(() => {
          (async()=>{
                const res= await axios(`https://littleninjas-backend.onrender.com/courses/${level}`);

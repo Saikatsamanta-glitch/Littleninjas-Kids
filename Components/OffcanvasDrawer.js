@@ -12,9 +12,9 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import {  toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 
-const OffcanvasDrawer = ({ show, setShow }: any) => {
+const OffcanvasDrawer = ({ show, setShow }) => {
         const data = useContext(Course_context)
-       let recaptchaVerifier:any=null
+       let recaptchaVerifier=null
         const handleClose = () => { 
             setShowChecker(true)
             setOtp('')
@@ -27,10 +27,10 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                 grade:''
             })
         }
-        const [phone, setphone] = useState<string>('')
-        const [otp, setOtp] = useState<string>('');
-        const [showchecker, setShowChecker] = useState<boolean>(true);
-        const [disable, setDisable] = useState<boolean>(true);
+        const [phone, setphone] = useState('')
+        const [otp, setOtp] = useState('');
+        const [showchecker, setShowChecker] = useState(true);
+        const [disable, setDisable] = useState(true);
         const [confirmResult,setconfirm]=useState()
         const [regdata,setregdata]=useState({
                 email:'',
@@ -51,7 +51,7 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                                 "recaptcha",
                                 {
                                         size: "normal",
-                                        callback: (response: any) => {
+                                        callback: (response) => {
                                                 console.log(response);
                                                 getOtp()
                                                 setTimeout(() => {
@@ -97,7 +97,7 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
        }
        
     
-      async function sendEmail(emailobj:any) {
+      async function sendEmail(emailobj) {
         try {
                 const {to_email,message,from_name,user_email}=emailobj
                 for(let i=0;i<to_email.length;i++){
@@ -123,7 +123,7 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
         }
       }
      
-    const submitRegistration=async(e:any)=>{
+    const submitRegistration=async(e)=>{
         e.preventDefault();
          if(!course || !grade || !phone){
                 toast.error('pls fill up all the fields')  
@@ -147,7 +147,7 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
         }
         await sendEmail(sendEmailDetails)
     }
-     const changeRegValue=(e:any)=>{
+     const changeRegValue=(e)=>{
          setregdata({
                 ... regdata,
                 [e.target.name]:e.target.value

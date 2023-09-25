@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "Components/Schedule.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "Components/Schedule.js", "Components/Footer.js", "Components/OffcanvasDrawer.js", "Components/couseTab.js", "Components/Courses.js"],
   "exclude": ["node_modules"]
 }
