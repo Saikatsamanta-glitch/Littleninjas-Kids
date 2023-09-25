@@ -9,12 +9,12 @@ import { Course_context } from '@/context/course_context';
 import OtpInput from 'react-otp-input';
 import auth from "../firebaseconfig";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
+import {  toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 
 const OffcanvasDrawer = ({ show, setShow }: any) => {
-       let recaptchaVerifier=null
+        const data = useContext(Course_context)
+       let recaptchaVerifier:any=null
         const handleClose = () => { 
             setShowChecker(true)
             setOtp('')
@@ -39,10 +39,8 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                 grade:''
                
         })
-        const data = useContext(Course_context)
-        console.log(regdata)
       
-      const {email,name,course,grade,number}=regdata
+      const {email,name,course,grade}=regdata
       console.log(course)
         const checkBtn = (e) => {
                 e.preventDefault();
@@ -174,7 +172,7 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                                                  }}
                                                 />
                                                 <Form.Text className="text-muted">
-                                                        We'll never share your email with anyone else.
+                                                        {"We'll never share your email with anyone else."}
                                                 </Form.Text>
                                         </div>
 
@@ -201,7 +199,7 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                                                         {
                                                                 data.map((obj, i) => {
                                                                         return (
-                                                                                <option value={obj.title}>{obj.title}</option>
+                                                                                <option key={obj.title} value={obj.title}>{obj.title}</option>
                                                                         )
                                                                 })
                                                         }

@@ -3,8 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react';
-import { ToastContainer, toast } from "react-toastify";
-import {ShareSocial} from 'react-share-social' 
+
 import EventCard from '@/Components/EventCard';
 const Events = () => {
      const [index,setindex]=useState(0)
@@ -65,7 +64,7 @@ const Events = () => {
        <div className='md:w-[90%] w-full h-[50px] flex rounded-sm text-black bg-slate-50 shadow-lg items-center md:px-5 px-0 cursor-pointer justify-evenly'>
         {
             Courses.map((obj,i)=>(
-                <Link href='' className={`text-center ${i==index && 'active_class'}`} onClick={(e)=>{
+                <Link key={obj.title} href='' className={`text-center ${i==index && 'active_class'}`} onClick={(e)=>{
                    setindex(i)           
                 }}>
                 {obj.title}
@@ -85,7 +84,7 @@ const Events = () => {
         {
             Courses[index]?.events?.map((obj,i)=>{
                 return(
-                 <EventCard obj={obj} key={obj.title}/>
+                 <EventCard  obj={obj} key={obj.title}/>
                 )
             })
         }

@@ -17,7 +17,7 @@ function NavScrollExample() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className=" md:m-auto my-2 my-lg-0 flex items-center h3  gap-x-10 nav_container"
+            className=" md:m-auto my-2 my-lg-0 flex items-center h4 md:w-[700px] sm:gap-y-4   gap-x-7 nav_container"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
@@ -36,7 +36,9 @@ function NavScrollExample() {
             <Link href="/dashboard" >
               Dashboard
             </Link>
-            
+            <Link href="/events" >
+              Events🔥
+            </Link>
             <Link href="/blog"> Blog </Link>
           </Nav>
           <div className='flex items-center gap-3 me-5'>

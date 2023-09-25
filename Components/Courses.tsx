@@ -20,9 +20,10 @@ export default function Courses() {
         <div className="flex md:flex-row flex-col">
                 <div className="md:w-1/4 h-auto w-screen flex flex-wrap md:flex-nowrap md:flex-col items-center justify-center md:mr-5  sm:mb-4 sm:mr-0">
                         {
-                                res?.map((v)=>{
+                                res?.map((v,i)=>{
                                         return (
-                                                <div key={v.title} onClick={()=>{setLevel(v.course_id)}} className="md:w-[95%] course_tab md:scale-100 sm:w-auto  md:h-14 md:border-l-8 m-2 md:mb-3 md:border-[#FF847E] overflow-hidden rounded-lg flex items-center justify-between md:text-2xl hover:bg-[#ffeec2] hover:scale-110 cursor-pointer px-2 transition-all duration-150"> <span className="text-lg">{v.title}</span> <h1 className="text-gray-600 md:block hidden">{">"}</h1> </div>
+                                                <div key={v.title}  onClick={()=>{setLevel(v.course_id)}} className={`md:w-[95%] course_tab  sm:w-auto  md:h-14 md:border-l-8 m-2 md:mb-3 md:border-[#FF847E] overflow-hidden rounded-lg  flex items-center justify-between md:text-2xl hover:bg-[#ffeec2] hover:scale-110 cursor-pointer px-2 transition-all duration-150
+                                                 ${ i+1==level && "scale-110 bg-[#ffeec2]"  }`  }> <span className="text-lg">{v.title}</span> <h1 className="text-gray-600 md:block hidden">{">"}</h1> </div>
                                         )
                                 })
                                 

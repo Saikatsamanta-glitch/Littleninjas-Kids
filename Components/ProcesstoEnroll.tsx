@@ -24,7 +24,7 @@ const ProcesstoEnroll = () => {
       <div className='w-full h-full flex md:justify-between items-center md:flex-row flex-col gap-y-10'>
           {
             enrollarr.map((obj,i)=>(
-             <div className='flex flex-col items-center gap-y-10'>
+             <div key={obj.title} className='flex flex-col items-center gap-y-10'>
                <img src={obj.img} className='w-[80px] h-[80px] m-auto'/>
                 <div className='flex mx-auto justify-center md:w-[70%]'>
                  <div className='text-[#ffe299] md:text-[82px] text-[52px] self-center mr-[10px]'>{i+1}</div>
