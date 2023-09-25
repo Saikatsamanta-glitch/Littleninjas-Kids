@@ -10,6 +10,8 @@ import OtpInput from 'react-otp-input';
 import auth from "../firebaseconfig";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 const OffcanvasDrawer = ({ show, setShow }: any) => {
        let recaptchaVerifier=null
@@ -17,15 +19,31 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
             setShowChecker(true)
             setOtp('')
             setphone('')
-            setShow(false) }
+            setShow(false)
+            setregdata({
+                email:'',
+                name:'',
+                course:'',
+                grade:''
+            })
+        }
         const [phone, setphone] = useState<string>('')
         const [otp, setOtp] = useState<string>('');
         const [showchecker, setShowChecker] = useState<boolean>(true);
         const [disable, setDisable] = useState<boolean>(true);
         const [confirmResult,setconfirm]=useState()
+        const [regdata,setregdata]=useState({
+                email:'',
+                name:'',
+                course:'',
+                grade:''
+               
+        })
         const data = useContext(Course_context)
-        console.log(showchecker)
-
+        console.log(regdata)
+      
+      const {email,name,course,grade,number}=regdata
+      console.log(course)
         const checkBtn = (e) => {
                 e.preventDefault();
                 console.log(phone);
@@ -79,12 +97,65 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
             toast.error('oops! Something went wrong')
     });
        }
-    const submitRegistration=(e)=>{
+       
+    
+      async function sendEmail(emailobj:any) {
+        try {
+                const {to_email,message,from_name,user_email}=emailobj
+                for(let i=0;i<to_email.length;i++){
+                        const templateParams = {
+                                to_email: to_email[i], // Replace with the recipient's email address
+                                message: message[i],
+                                from_name,
+                                user_email
+                              };
+                          
+                              await emailjs.send(
+                                'service_s4m43sa', // Replace with your EmailJS service ID
+                                'template_3mkrz2x', // Replace with your EmailJS template ID
+                                templateParams,
+                                'iKVmSfUHvR95gAowy' // Replace with your EmailJS user ID
+                              );
+                }
+          
+      
+          console.log('Email sent successfully');
+        } catch (error) {
+          console.error('Error sending email:', error);
+        }
+      }
+     
+    const submitRegistration=async(e:any)=>{
         e.preventDefault();
-        alert('submit')
+         if(!course || !grade || !phone){
+                toast.error('pls fill up all the fields')  
+                return
+         }
+        toast.success(' successfully registered')
+      
+        const sendEmailDetails={
+                to_email:[email,'littleninjas.contact@gmail.com'],
+                message:['registration successfull',`user details are
+                  name:${name},
+                  email:${email},
+                  course:${course},
+                  grade:${grade},
+                  phone:${phone}
+                
+                `],
+                from_name:'LittleNinjas',
+                user_email:'littleninjas.contact@gmail.com',
+
+        }
+        await sendEmail(sendEmailDetails)
     }
-
-
+     const changeRegValue=(e:any)=>{
+         setregdata({
+                ... regdata,
+                [e.target.name]:e.target.value
+         })
+     }
+    
         return (
                 <Offcanvas show={show} onHide={handleClose} placement='end' style={{ width: '500px' }}>
                         <Offcanvas.Header closeButton>
@@ -97,7 +168,11 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                                 <Form onSubmit={submitRegistration}>
                                         <div className="mb-3">
                                                 <Form.Label>Email address</Form.Label>
-                                                <Form.Control type="email" placeholder="Enter email" required />
+                                                <Form.Control type="email" placeholder="Enter email" required value={email} name='email' 
+                                                 onChange={(e)=>{
+                                                    changeRegValue(e)
+                                                 }}
+                                                />
                                                 <Form.Text className="text-muted">
                                                         We'll never share your email with anyone else.
                                                 </Form.Text>
@@ -105,15 +180,28 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
 
                                         <div className="mb-3" >
                                                 <Form.Label>Name</Form.Label>
-                                                <Form.Control type="text" placeholder="Name" required/>
+                                                <Form.Control type="text" placeholder="Name" required value={name} name='name'
+                                                onChange={(e)=>{
+                                                        changeRegValue(e)
+                                                     }}
+                                                />
                                         </div>
                                         <div className="mb-3">
-                                                <Form.Select aria-label="Default select example" required>
-                                                        <option>Select Course</option>
+                                                <Form.Select aria-label="Default select example" required 
+                                                value={course}
+                                                name='course'
+                                                onChange={(e)=>{
+                                                        console.log(e)
+                                                        changeRegValue(e)
+                                                     }}
+                                                >
+                                                        <option
+                                                         
+                                                        >Select Course</option>
                                                         {
                                                                 data.map((obj, i) => {
                                                                         return (
-                                                                                <option value={i + 1}>{obj.title}</option>
+                                                                                <option value={obj.title}>{obj.title}</option>
                                                                         )
                                                                 })
                                                         }
@@ -146,17 +234,23 @@ const OffcanvasDrawer = ({ show, setShow }: any) => {
                                                 numInputs={6}
                                                 renderSeparator={<pre>  </pre>}
                                                 renderInput={(props) => <input {...props} /> }
-                                                containerStyle={{}}
+                
                                                 inputStyle={{border:'1px solid rgb(228,228,231)',width:'30px',outline:'none',opacity:1}}
                                         />
                                                 <button onClick={confirmOtp} className=' bg-orange-500 border-none w-[100px] p-1 ml-4 text-white'>verify otp </button> 
                                          </div>}
                                         <div className="mb-3">
-                                                <Form.Select aria-label="Default select example" required>
+                                                <Form.Select aria-label="Default select example" required
+                                                 value={grade}
+                                                 name='grade'
+                                                 onChange={(e)=>{
+                                                        changeRegValue(e)
+                                                     }}
+                                                >
                                                         <option>Select Grade</option>
-                                                        <option value='1'>Grade 1-5</option>
-                                                        <option value='2'>Grade 6-10</option>
-                                                        <option value='3'>Grade 10+</option>
+                                                        <option>Grade 1-5</option>
+                                                        <option >Grade 6-10</option>
+                                                        <option>Grade 10+</option>
                                                 </Form.Select>
 
                                         </div>
