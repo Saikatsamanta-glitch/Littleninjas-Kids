@@ -133,3 +133,6 @@
 body{
         cursor: url('/level1blade.png'), auto ; 
 }
+.modal-content{
+        width: 600px  !important;
+}

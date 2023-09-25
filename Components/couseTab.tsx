@@ -1,8 +1,8 @@
-
 import { Button } from "./ui/button"
+import Link from "next/link"
 export default function CourseTab({ data = {} }) {
         const color = data.color.toString()
-       
+
         return (
 
                 <div className="h-[450px] w-80 hover:scale-105 transition-all duration-200  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">
@@ -35,10 +35,13 @@ export default function CourseTab({ data = {} }) {
                         </ul>
                         <div className="flex justify-evenly">
 
-                                <a target="_blank" href={data.pdf_link}> <Button size="sm" variant="outline" className='text-xl font-normal hover:bg-[#FFDF8C] '  >  View curriculum</Button></a>
-                                <Button size="sm" className='bg-[#FFDF8C] text-xl font-normal border-2  text-[#545454] hover:text-white hover:bg-[#FF847E]'>  Book now</Button>
+                                <a target="_blank" href={data.pdf_link}> <Button size="sm" variant="outline" className='text-sm font-normal hover:bg-[#FFDF8C] '  >  View curriculum</Button></a>
+                                <Link href="/demo-schedule">
+                                        <Button size="sm" className='bg-[#FFDF8C] text-sm font-normal border-2  text-[#545454] hover:text-white hover:bg-[#FF847E]'>  Get Demo!</Button>
+                                </Link>
                         </div>
                         <img src="/level1blade.png" alt="" className="h-20 absolute -top-6 right-0" />
+
                 </div>
         )
 }
