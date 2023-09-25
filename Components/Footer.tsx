@@ -1,17 +1,25 @@
+'use client';
+  
 import React from 'react'
 import { Button } from './ui/button'
+ import {useContext} from 'react'
+ import { Course_context } from '@/context/course_context';
 const Footer = () => {
+    const data=useContext(Course_context)
+    console.log(data)
     const FooterArr=[
 
         {  
              title:"Our Courses For Kids",
 
-           content:["Grade 1-2","Grade 3-5","Grade 6-8","Grade 9+"],
+           content: data.map((course)=>course.title)
             
            
           
 
-        },{
+        },
+        
+        {
             title:"Quick Links",
            content:["About Us","Trainers","View Courses","Student Projects"],
         },{
@@ -34,6 +42,7 @@ const Footer = () => {
       <h3>LittleNinjas</h3>
     <div className="mx-auto w-full max-w-screen-xl pb-10">
       <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        
         {
             FooterArr.map((obj)=>{
                
@@ -42,7 +51,8 @@ const Footer = () => {
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{obj.title}</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium  w-full px-0">
                     {  obj.title!="Get In Touch"?
-                        obj.content.map((val:any)=>(
+                         
+                       obj.content.map((val:any)=>(
                             
                             
                                 <li className="mb-4" key={val}>
@@ -50,7 +60,12 @@ const Footer = () => {
                             </li>
                             
                         
-                        )): obj.content.map((val:any)=>(
+                        ))
+                      
+                      
+                    
+                        
+                        : obj.content.map((val:any)=>(
                             
                             
                             <li className=" space-x-1 mb-4 flex  md:gap-3" key={val.id}>

@@ -74,6 +74,7 @@
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
+   
   }
 }
 .nav_container a,
@@ -125,14 +126,27 @@
   background: #555;
 }
 
-@media only screen and (max-width: 600px) {
-  .course_tab {
-    border: 2px black solid;
-  }
-}
-body{
-        cursor: url('/level1blade.png'), auto ; 
-}
-.modal-content{
-        width: 600px  !important;
-}
+
+    @media only screen and (max-width: 600px) {
+        .course_tab{
+                border: 2px black solid;
+        }
+      }
+    *{
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    .active_class{
+      color: #FFA500;
+      font-weight: 800;
+      border-bottom: 0.4rem solid #FFA500 ;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .custom{
+        padding: 6px !important;
+        font-size: small;
+      }
+    }
+
