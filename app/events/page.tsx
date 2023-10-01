@@ -5,8 +5,10 @@ import React from 'react'
 import { useState } from 'react';
 
 import EventCard from '@/Components/EventCard';
+
 const Events = () => {
      const [index,setindex]=useState(0)
+   
    
    const Courses=[
       {
@@ -56,11 +58,11 @@ const Events = () => {
    
      
   return (
-    <div className='w-full h-full mt-10 mb-10 flex flex-col items-center gap-y-10 md:px-10 px-0 '>
+    <div className='w-full h-full mt-10 mb-20 flex flex-col items-center gap-y-10 md:px-10 px-0 '>
       <h1 className='w-full  text-3xl font-bold text-center'>
        Events on LittleNinjas 
       </h1>
-      <div className='w-full h-full flex flex-col items-center gap-y-3 '>
+      <div className='w-full h-full flex flex-col items-center gap-y-7 '>
        <div className='md:w-[90%] w-full h-[50px] flex rounded-sm text-black bg-slate-50 shadow-lg items-center md:px-5 px-0 cursor-pointer justify-evenly'>
         {
             Courses.map((obj,i)=>(
