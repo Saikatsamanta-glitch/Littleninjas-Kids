@@ -275,10 +275,12 @@ const OffcanvasDrawer = ({ show, setShow }) => {
         }
         return (
                 <Offcanvas show={show} onHide={handleClose} placement='end' style={{ width: '500px' }}>
-                        <Offcanvas.Header closeButton>
+                        <Offcanvas.Header closeButton className="flex justify-between">
                                 <Offcanvas.Title>
                                         <img src="/brand.png" alt="" className='h-[60px]' />
-                                        Enroll Now🙌</Offcanvas.Title>
+                                        Enroll Now🙌
+                                </Offcanvas.Title>
+                                <button onClick={handleClose}> {"👈 Back"}</button>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                         <div className="calendly-inline-widget" data-url="https://calendly.com/littleninjas-contact/demo_session" style={{minWidth:'100%',height:'100%'}}></div>
