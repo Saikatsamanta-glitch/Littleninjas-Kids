@@ -7,13 +7,14 @@ export default function Courses() {
         const res = useContext(Course_context);
         const [level_data,setLevel_Data] = useState([]);
         const [level,setLevel]= useState(1);
+        
         useEffect(() => {
          (async()=>{
                const res= await axios(`https://littleninjas-backend.onrender.com/courses/${level}`);
         //        console.log(res.data);
                setLevel_Data(res.data)
          })()
-        }, [level])   
+        },[level])   
   return (
     <div className="h-auto mt-10 md:px-16">
         <h1 className="text-center text-4xl mb-10"> Courses 🔥</h1>

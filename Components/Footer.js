@@ -6,7 +6,7 @@ import { Button } from './ui/button'
  import { Course_context } from '@/context/course_context';
 const Footer = () => {
     const data=useContext(Course_context)
-    console.log(data)
+//     console.log(data)
     const FooterArr=[
 
         {  

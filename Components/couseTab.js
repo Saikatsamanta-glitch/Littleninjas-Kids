@@ -1,11 +1,22 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "./ui/button"
+import axios from "axios"
 import OffcanvasDrawer from "./OffcanvasDrawer"
 export default function CourseTab({ data = {} }) {
-        const color = data.color.toString()
-        const [show,setShow] =useState(false);
+        const color = data.color.toString();
+        const [sessions, setSessions] = useState([]);
+        const [show, setShow] = useState(false);
         
+        useEffect(() => {
+                (async function () {
+                        const res = await axios(`https://littleninjas-backend.onrender.com/level/${data.level_id}`);
+                        // console.log(res.data);s
+                        setSessions(res.data)
+                })()
+
+        }, [data.level_id])
+        // console.log(sessions );
         return (
 
                 <div className="h-[450px] w-80 hover:scale-105 transition-all duration-200  p-2 bg-[#FFF6DE] rounded-lg relative md:scale-95 scale-90 flex-shrink-0 flex flex-col justify-between ">
@@ -30,21 +41,22 @@ export default function CourseTab({ data = {} }) {
                         </div>
                         <h3 className="text-center text-lg text-gray-600">Course overview 🚀</h3>
                         <ul className="list-disc h-28 overflow-y-scroll rounded-md bg-white">
-                                <li >Basic of HTML</li>
-                                <li>Basics of CSS</li>
-                                <li>Advance HTML</li>
-                                <li>Basics of JavaScript</li>
-                                <li>Launching A Website</li>
+                               {
+                                sessions.map(v=>{
+                                        console.log(v);
+                                        return <li key={v.title}>{v.title}</li>
+                                })
+                               }
                         </ul>
                         <div className="flex justify-evenly">
 
                                 <a target="_blank" href={data.pdf_link}> <Button size="sm" variant="outline" className='text-sm font-normal hover:bg-[#FFDF8C] '  >  View curriculum</Button></a>
 
-                                        <Button size="sm" onClick={()=>setShow(!show)} className='bg-[#FFDF8C] text-sm font-normal border-2  text-[#545454] hover:text-white hover:bg-[#FF847E]'>  Get Demo!</Button>
-                                
+                                <Button size="sm" onClick={() => setShow(!show)} className='bg-[#FFDF8C] text-sm font-normal border-2  text-[#545454] hover:text-white hover:bg-[#FF847E]'>  Get Demo!</Button>
+
                         </div>
                         <img src="/level1blade.png" alt="" className="h-20 absolute -top-6 right-0" />
-                        <OffcanvasDrawer show={show} setShow={setShow} /> 
+                        <OffcanvasDrawer show={show} setShow={setShow} />
                 </div>
         )
 }
