@@ -20,9 +20,9 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Link href='/about' >About</Link>
+            <Link disabled href='/about' >About</Link>
             
-            <NavDropdown title="Courses" id="navbarScrollingDropdown">
+            <NavDropdown disabled title="Courses" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -42,7 +42,7 @@ function NavScrollExample() {
           </Nav>
           <div className='flex items-center gap-3 me-5'>
           <Button size="lg" variant="outline" className='text-2xl font-normal h-11 hover:bg-[#FFDF8C] '>Login</Button>
-          <Button  size="lg" className='bg-[#FFDF8C] text-2xl font-normal border-2 border-black/75  outline-2 text-[#545454] flex gap-3 hover:text-white'> <img src="/discord.png" className='h-[85%]' alt="" /> Discord</Button>
+          <a target="_blank" href="https://discord.gg/92bgxH4EU8" className="text-decoration-none"> <Button  size="lg" className='text-decoration-none bg-[#FFDF8C] text-2xl font-normal border-2 border-black/75  outline-2 text-[#545454] flex gap-3 hover:text-white'> <img src="/discord.png" className='h-[85%]' alt="" /> Discord</Button></a>
           </div>
         </Navbar.Collapse>
       </Container>
