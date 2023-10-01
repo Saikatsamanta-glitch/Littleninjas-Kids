@@ -36,7 +36,7 @@ function NavScrollExample() {
               Dashboard
             </Link>
             <Link href="/events" >
-              Events🔥
+              Events <span className='animate-ping'>🔥</span>
             </Link>
             <Link href="/blog"> Blog </Link>
           </Nav>
